@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSL-KDD Model Interaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input, button, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .results img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NSL-KDD Model Interaction</h1>
+
+        <!-- Train Models -->
+        <div class="form-group">
+            <button id="trainButton">Train Models</button>
+        </div>
+        <div id="trainResult" class="results"></div>
+
+        <!-- Predict -->
+        <div class="form-group">
+            <label for="inputData">Enter Input Data (Comma-separated):</label>
+            <textarea id="inputData" rows="3" placeholder="e.g., 0,1,0,0,123,456,..."></textarea>
+            <button id="predictButton">Predict</button>
+        </div>
+        <div id="predictResult" class="results"></div>
+
+        <!-- Visualize -->
+        <div class="form-group">
+            <button id="visualizeButton">Visualize Data</button>
+        </div>
+        <div id="visualizeResult" class="results"></div>
+    </div>
+
+    <script>
+        document.getElementById('trainButton').addEventListener('click', () => {
+            fetch('/train', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('trainResult').innerHTML = `<p>${data.message}</p>`;
+                })
+                .catch(err => {
+                    document.getElementById('trainResult').innerHTML = `<p>Error: ${err.message}</p>`;
+                });
+        });
+
+        document.getElementById('predictButton').addEventListener('click', () => {
+            const input = document.getElementById('inputData').value;
+            const inputData = input.split(',').map(Number);
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data: inputData })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const result = `
+                        <p><strong>Decision Tree Prediction:</strong> ${data['Decision Tree Prediction']}</p>
+                        <p><strong>SVM Prediction:</strong> ${data['SVM Prediction']}</p>
+                        <p><strong>Random Forest Prediction:</strong> ${data['Random Forest Prediction']}</p>
+                        <p><strong>Final Prediction (Majority Voting):</strong> ${data['Final Prediction (Majority Voting)']}</p>
+                    `;
+                    document.getElementById('predictResult').innerHTML = result;
+                })
+                .catch(err => {
+                    document.getElementById('predictResult').innerHTML = `<p>Error: ${err.message}</p>`;
+                });
+        });
+
+        document.getElementById('visualizeButton').addEventListener('click', () => {
+            fetch('/visualize')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.image) {
+                        document.getElementById('visualizeResult').innerHTML = `<img src="data:image/png;base64,${data.image}" alt="Visualization">`;
+                    } else {
+                        document.getElementById('visualizeResult').innerHTML = `<p>${data.error}</p>`;
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('visualizeResult').innerHTML = `<p>Error: ${err.message}</p>`;
+                });
+        });
+    </script>
+</body>
+</html>

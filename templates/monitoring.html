@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Monitoring</title>
+    <link rel = "Stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+</head>
+<body>
+    <div id="moni-navbar">
+    <h1>Network Monitoring</h1>
+    </div>
+    <div id = "monitor-form">
+    <form method="POST">
+        <div class = "fill1">
+        <label>Interface:</label>
+        <input type="text" name="interface" placeholder="e.g., Wi-Fi" required>
+       </div>
+       <div class = "fill1">
+        <label>Interval (Seconds):</label>
+        <input type="number" name="interval" value="10" required>
+    </div>
+      <div class = "buttons">
+        <button id ="button1" name="action" value="start">Start Monitoring</button> 
+        <button id="button2" name="action" value="stop">Stop Monitoring</button>
+
+        <button
+            id="to_process" style="width: 130px; height: 50px;"
+            onclick="window.location.href='/load_data'"
+        >Next>>
+    </button>
+
+    </div> 
+    </form>
+    </div>
+    <p>{{ message }}</p>
+</body>
+</html>

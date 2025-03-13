@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "Stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <title>Load and Preprocess Data</title>
+</head>
+<body>
+    <div id="load-navbar1">
+    <h1>Load and Preprocess Data</h1>
+    </div>
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+    <!--<div id ="load-navbar2">
+    <h1>Upload an Excel File for Processing</h1></div>-->
+    <div id = load-form>
+    <form method="POST" enctype="multipart/form-data">
+        <h1>Upload an Excel File for Processing</h1>
+        <div id = choosefile>
+        <label for="file">Choose Excel file:</label>
+        <input type="file" id="file" name="file" accept=".xlsx,.xls,.txt">
+        </div>
+        <button 
+            id = "uploadbutton" 
+            type="submit"
+        >
+            Upload and Process
+        </button>
+        <a href="/predict" calss="back-link">Predict>></a>
+       
+        <a href="/" class="back-link">Back to Home</a>
+    </form>
+    </div>
+   
+</body>
+</html>

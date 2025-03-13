@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: rgb(17, 16, 16);
+}
+body {
+    background-image: url(../images/img4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+#navbar1 {
+    height: 150px;
+    background-color: rgb(191, 11, 201);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navbar1 h1 {
+    color: white;
+    margin:0;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.row {
+    display: flex;
+    gap: 60px; 
+    margin-top : 40px;
+    margin-left: 20px;
+}
+
+.option {
+    height: 150px;
+    width: 350px; 
+    /*background-color: orange;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-left:40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.option a {
+    text-decoration: none;
+    color: white;
+}
+.option:hover {
+    transform: scale(1.1);
+   /* background-color: darkorange;*/
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/*---------------------------------------------------------monitoring -----------------------------------------------------------------------*/
+
+#moni-navbar{
+    height : 150px;
+    background-color: rgb(191, 11, 201);
+        display : flex;
+        justify-content: center;
+        align-items: center;
+}
+.fill1{
+    margin : 10px 10px 10px 10px;
+    font-size: 35px;
+}
+.fill1 label {
+    color: white;
+}
+input {
+    height: 25px; 
+    font-size: 18px; 
+}
+#moni-navbar h1{
+    color: white;
+   margin: 0;
+}
+#monitor-form{
+    margin-top: 50px;
+    height : 300px;
+    width: 600px;
+   padding-top: 40px;
+   /*background-color: orange;*/
+    display:flex;
+    margin-left: 415px;
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 10px; 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+.buttons {
+    height: 50px;
+    margin-top : 60px ;
+    margin-left :50px;
+    display: flex ; 
+}
+#button1, #button2{ 
+    margin-right : 30px;
+    width: 150px;
+}
+#button1:hover , #button2:hover{
+    transform: scale(1.1);
+}
+
+/*-----------------------------------------------------load_data -------------------------------------------------------------------------------*/
+
+#load-navbar1{
+    height : 150px;
+    background-color:rgb(191, 11, 201);
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#load-navbar1 h1 {
+    margin: 0;
+    text-align: center;
+    
+}
+
+#load-form{
+    margin-top: 50px;
+    height : 300px;
+    width: 800px;
+    padding-top: 40px;
+    display:flex;
+    margin-left: 320px;
+    /*background-color:rgb(139, 136, 138);*/
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 10px; 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+h1{
+    color: white;
+    margin-left:140px;
+    margin-bottom: 30px;
+}
+
+
+#choosefile {
+    font-size : 30px;
+    margin-left: 50px;
+}
+#uploadbutton {
+    height : 70px;
+    width : 220px;
+    margin-top : 45px;
+    margin-left : 300px;
+    font-size: 20px ;
+}
+.back-link {
+    display: block; 
+    margin-top: 10px; 
+    margin-left: 180px;
+    text-align: center; 
+    text-decoration: none; 
+    color: blue; 
+    font-weight: bold;
+}
+#uploadbutton:hover{
+    transform: scale(1.1);
+}
+/*----------------------------------------------predict -----------------------------------------*/
+
+
+#pred-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

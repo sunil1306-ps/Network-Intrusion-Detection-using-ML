@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "Stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <title>Make Predictions</title>
+</head>
+<body style="margin: 0;">
+    <div id="pred-div">
+        <h1 style="margin: 0; margin-bottom: 30px">Make Predictions</h1>
+        <div style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+                <br>
+            {% elif predictions %}
+                <h2 style="color: white;">Prediction Results (First 10):</h2>
+                <br>
+                <p style="color: white;">{{ predictions }}</p>
+                <br>
+                <h2 style="color: white;">Threat Level:</h2>
+                <br>
+                <p style="font-weight: bold; color: {% if 'Critical' in threat_level %}red{% elif 'High' in threat_level %}orange{% elif 'Moderate' in threat_level %}yellow{% else %}green{% endif %};">
+                    {{ threat_level }}
+                </p>
+                <br>
+            {% else %}
+                <p>No predictions available. Please submit data.</p>
+            {% endif %}
+            <form method="POST">
+            
+            <br>
+                <button type="submit" style="width: 100%; height: 50px; background-color: white; color: black">Predict</button>
+            </form>
+            <br>
+            <a href="/" style="color: white;">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <title>Home</title>
+</head>
+<body> 
+    <div id="navbar1">
+        <h1>Welcome to the Network Intrusion Detection System</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="option" id="monitor"><a href="/monitor_network">Monitor Network</a></div>
+            <div class="option" id="load"><a href="/load_data">Load and Preprocess Data</a></div>
+        </div>
+        <div class="row">
+            <div class="option" id="predict"><a href="/predict">Make Predictions</a></div>
+            <!-- <div class="option" id="visualize"><a href="/visualize">Visualize Data</a></div> -->
+        </div>
+    </div>
+</body>
+</html>
+
