@@ -1,6 +1,6 @@
 # **Network Intrusion Detection System (NIDS) Using Machine Learning**  
 
-## **📌 Table of Contents**  
+## **Table of Contents**  
 1️⃣ [Project Overview](#project-overview)  
 2️⃣ [Features](#features)  
 3️⃣ [Project Structure](#project-structure)  
@@ -19,12 +19,12 @@
 
 ---
 
-## **📌 Project Overview**  
+## **Project Overview**  
 This project is a **Network Intrusion Detection System (NIDS)** that uses **machine learning models** to detect malicious network activities such as **Port Scanning, Brute Force Attacks, DoS, SQL Injection, and Cross-Site Scripting (XSS)**. The system captures live network traffic, extracts features, processes the data, and applies **Decision Tree, SVM, and Random Forest** models to detect potential attacks.
 
 ---
 
-## **📌 Features**  
+## **Features**  
 ✅ **Live Network Traffic Capture** – Uses Scapy to monitor network packets.  
 ✅ **Feature Extraction** – Extracts 43 NSL-KDD-like features from network data.  
 ✅ **Machine Learning Models** – Decision Tree, SVM, and Random Forest models trained on NSL-KDD & real network traffic.  
@@ -35,7 +35,7 @@ This project is a **Network Intrusion Detection System (NIDS)** that uses **mach
 
 ---
 
-## **📌 Project Structure**  
+## **Project Structure**  
 ```
 /NIDS_Project/
 │── /static/                 # Static files (CSS, images)
@@ -60,7 +60,7 @@ This project is a **Network Intrusion Detection System (NIDS)** that uses **mach
 
 ---
 
-## **📌 Installation & Setup**  
+## **Installation & Setup**  
 ### **1️⃣ Clone the Repository**  
 ```bash
 git clone https://github.com/sunil1306-ps/NIDS_Project.git
@@ -80,7 +80,7 @@ python app.py
 
 ---
 
-## **📌 How to Use?**  
+## **How to Use?**  
 ### **🔹 Start Network Monitoring**  
 1. Open **http://127.0.0.1:5000/monitor_network**.  
 2. Select **Network Interface** and **Time Interval**.  
@@ -103,7 +103,7 @@ python app.py
 
 ---
 
-## **📌 Threat Level Calculation**
+## **Threat Level Calculation**
 - The **threat level** is based on the **percentage of detected attacks** in the prediction array.
 - **Severity Levels:**
   - 🟢 **0% Attacks** → **No Threat**
@@ -114,7 +114,7 @@ python app.py
 
 ---
 
-## **📌 Machine Learning Models Used**
+## **Machine Learning Models Used**
 ✅ **Decision Tree Classifier**  
 ✅ **Support Vector Machine (SVM)**  
 ✅ **Random Forest Classifier**  
@@ -123,7 +123,7 @@ python app.py
 
 ---
 
-## **📌 Example Output**
+## **Example Output**
 **First 10 Predictions:**  
 ```
 [0, 1, 0, 1, 0, 0, 1, 0, 1, 1]
@@ -133,7 +133,7 @@ python app.py
 
 ---
 
-## **📌 Technologies Used**
+## **Technologies Used**
 - **Python** (Flask, Scapy, NumPy, Pandas, Sklearn, Matplotlib)
 - **Machine Learning** (Decision Tree, SVM, Random Forest)
 - **Network Security** (Packet Sniffing with Scapy)
@@ -141,21 +141,21 @@ python app.py
 
 ---
 
-## **📌 Future Improvements**
+## **Future Improvements**
 🔹 **Deep Learning Model** (CNN/RNN for advanced attack detection).  
 🔹 **Live Real-Time Alerts** (Send email/SMS when high threat is detected).  
 🔹 **Distributed NIDS** (Deploy across multiple devices).  
 
 ---
 
-## **📌 Contributors**
+## **Contributors**
 👤 **Sunil Saragadam** (Project Developer)  
 📧 **saragadamsunil7@gmail.com**  
 🔗 [GitHub Profile](https://github.com/sunil1306-ps)  
 
 ---
 
-## **📌 License**
+## **License**
 This project is licensed under the **MIT License**.  
 
 ---
