@@ -334,7 +334,7 @@ def predict():
             }
 
             # Truncate predictions to show only the first 10
-            truncated_predictions = final_predictions.flatten()[:10]
+            truncated_predictions = final_predictions.flatten()[:20]
 
             # Calculate threat level based on the number of '1's (attacks)
             attack_count = np.sum(final_predictions)
