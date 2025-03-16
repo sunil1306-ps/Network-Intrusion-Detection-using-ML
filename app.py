@@ -322,19 +322,24 @@ def predict():
             y_pred_rf = rf_clf.predict(processed_data)
 
             # Majority voting
-            predictions_array = np.array([y_pred_dt, y_pred_svm, y_pred_rf])
-            final_predictions, _ = mode(predictions_array, axis=0)
+            # predictions_array = np.array([y_pred_dt, y_pred_svm, y_pred_rf])
+            # final_predictions, _ = mode(predictions_array, axis=0)
+
+            final_predictions = []
+            for i in range(0, len(y_pred_dt)):
+                t = y_pred_dt[i] + y_pred_svm[i] + y_pred_rf[i]
+                final_predictions.append(1) if t > 1 else final_predictions.append(0)
 
             # Prepare predictions dictionary
-            predictions = {
-                "Decision Tree Prediction": y_pred_dt.tolist(),
-                "SVM Prediction": y_pred_svm.tolist(),
-                "Random Forest Prediction": y_pred_rf.tolist(),
-                "Final Prediction (Majority Voting)": final_predictions.flatten().tolist(),
-            }
+            # predictions = {
+            #     "Decision Tree Prediction": y_pred_dt.tolist(),
+            #     "SVM Prediction": y_pred_svm.tolist(),
+            #     "Random Forest Prediction": y_pred_rf.tolist(),
+            #     "Final Prediction (Majority Voting)": final_predictions.flatten().tolist(),
+            # }
 
             # Truncate predictions to show only the first 10
-            truncated_predictions = final_predictions.flatten()[:20]
+            truncated_predictions = final_predictions[:20]
 
             # Calculate threat level based on the number of '1's (attacks)
             attack_count = np.sum(final_predictions)
@@ -354,7 +359,7 @@ def predict():
             else:
                 threat_level = "Critical threat level detected! Take immediate action!"
 
-            return render_template("predict.html", predictions=truncated_predictions.tolist(), threat_level=threat_level)
+            return render_template("predict.html", predictions=truncated_predictions, threat_level=threat_level)
 
         except Exception as e:
             error = f"Error processing input data: {str(e)}"

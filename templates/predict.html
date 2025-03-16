@@ -8,13 +8,15 @@
 </head>
 <body style="margin: 0;">
     <div id="pred-div">
-        <h1 style="margin: 0; margin-bottom: 30px">Make Predictions</h1>
+        <div class="pred-heading">
+            <h1 style="margin: 0; margin-bottom: 30px">Make Predictions</h1>
+        </div>
         <div style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
             {% if error %}
                 <p style="color: red;">{{ error }}</p>
                 <br>
             {% elif predictions %}
-                <h2 style="color: white;">Prediction Results (First 10):</h2>
+                <h2 style="color: white;">Prediction Results (First 20):</h2>
                 <br>
                 <p style="color: white;">{{ predictions }}</p>
                 <br>
