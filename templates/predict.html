@@ -7,35 +7,34 @@
     <title>Make Predictions</title>
 </head>
 <body style="margin: 0;">
-    <div id="pred-div">
-        <div class="pred-heading">
-            <h1 style="margin: 0; margin-bottom: 30px">Make Predictions</h1>
-        </div>
-        <div style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+    <div id="load-navbar1">
+        <h1>Make Predictions</h1>
+    </div>
+    <div id="form-container">
+        <div id="load-form">
             {% if error %}
-                <p style="color: red;">{{ error }}</p>
+                <p style="color: red; margin-left: 30px;">{{ error }}</p>
                 <br>
             {% elif predictions %}
-                <h2 style="color: white;">Prediction Results (First 20):</h2>
+                <h2 style="color: white; margin-left: 30px;">Prediction Results (First 20):</h2>
+                <p style="color: white; margin-left: 30px;">{{ predictions }}</p>
                 <br>
-                <p style="color: white;">{{ predictions }}</p>
-                <br>
-                <h2 style="color: white;">Threat Level:</h2>
-                <br>
-                <p style="font-weight: bold; color: {% if 'Critical' in threat_level %}red{% elif 'High' in threat_level %}orange{% elif 'Moderate' in threat_level %}yellow{% else %}green{% endif %};">
+                <h2 style="color: white;margin-left: 30px;">Threat Level:</h2>
+                <p style="font-weight: bold; color: {% if 'Critical' in threat_level %}red{% elif 'High' in threat_level %}orange{% elif 'Moderate' in threat_level %}yellow{% else %}green{% endif %}; margin-left: 30px; font-size: 26px">
                     {{ threat_level }}
                 </p>
                 <br>
             {% else %}
-                <p>No predictions available. Please submit data.</p>
+                <p style="color: white; margin-left: 30px;">No predictions available. Please submit data.</p>
             {% endif %}
             <form method="POST">
-            
-            <br>
-                <button type="submit" style="width: 100%; height: 50px; background-color: white; color: black">Predict</button>
+                <div id="buttons-container">
+                    <button type="submit" id="uploadbutton" style="width: 130px; height: 50px;">Predict</button>
+                <button id="uploadbutton" style="width: 130px; height: 50px;">
+                    <a style="text-decoration: none;" href="/">Home>></a>
+                </button>
+                </div>
             </form>
-            <br>
-            <a href="/" style="color: white;">Back to Home</a>
         </div>
     </div>
 </body>

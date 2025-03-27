@@ -330,13 +330,6 @@ def predict():
                 t = y_pred_dt[i] + y_pred_svm[i] + y_pred_rf[i]
                 final_predictions.append(1) if t > 1 else final_predictions.append(0)
 
-            # Prepare predictions dictionary
-            # predictions = {
-            #     "Decision Tree Prediction": y_pred_dt.tolist(),
-            #     "SVM Prediction": y_pred_svm.tolist(),
-            #     "Random Forest Prediction": y_pred_rf.tolist(),
-            #     "Final Prediction (Majority Voting)": final_predictions.flatten().tolist(),
-            # }
 
             # Truncate predictions to show only the first 10
             truncated_predictions = final_predictions[:20]

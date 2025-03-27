@@ -4,7 +4,7 @@
     color: rgb(17, 16, 16);
 }
 body {
-    background-image: url(../images/img4.jpg);
+    background-image: url(../images/black-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -12,8 +12,8 @@ body {
     margin: 0;
 }
 #navbar1 {
-    height: 150px;
-    background-color: rgb(191, 11, 201);
+    height: 75px;
+    background-color: rgb(25, 25, 25);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ body {
 .option {
     height: 150px;
     width: 350px; 
-    /*background-color: orange;*/
+    background-color: rgba(255, 255, 255, 0.382);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,12 +64,19 @@ body {
    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-
+#form-container {
+    height: 85%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*---------------------------------------------------------monitoring -----------------------------------------------------------------------*/
 
 #moni-navbar{
-    height : 150px;
-    background-color: rgb(191, 11, 201);
+    height : 75px;
+    background-color: rgb(25, 25, 25);
         display : flex;
         justify-content: center;
         align-items: center;
@@ -90,13 +97,12 @@ input {
    margin: 0;
 }
 #monitor-form{
-    margin-top: 50px;
+    /* margin-top: 50px; */
     height : 300px;
     width: 600px;
-   padding-top: 40px;
-   /*background-color: orange;*/
+    padding-top: 40px;
     display:flex;
-    margin-left: 415px;
+    /* margin-left: 415px; */
     background: rgba(255, 255, 255, 0.3); 
     border-radius: 10px; 
     backdrop-filter: blur(10px); 
@@ -119,50 +125,69 @@ input {
 /*-----------------------------------------------------load_data -------------------------------------------------------------------------------*/
 
 #load-navbar1{
-    height : 150px;
-    background-color:rgb(191, 11, 201);
+    height : 75px;
+    background-color:rgb(25, 25, 25);
     display : flex;
     justify-content: center;
     align-items: center;
 }
 
 #load-navbar1 h1 {
+    color: white;
     margin: 0;
     text-align: center;
     
 }
 
 #load-form{
-    margin-top: 50px;
-    height : 300px;
+    height : 350px;
     width: 800px;
-    padding-top: 40px;
+    padding-top: 20px;
     display:flex;
-    margin-left: 320px;
-    /*background-color:rgb(139, 136, 138);*/
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.3); 
     border-radius: 10px; 
     backdrop-filter: blur(10px); 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
 }
-h1{
+
+#form-data {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+h2{
     color: white;
-    margin-left:140px;
+    margin-left: 20px;
     margin-bottom: 30px;
 }
 
 
 #choosefile {
-    font-size : 30px;
-    margin-left: 50px;
+    font-size : 18px;
+    margin-left: 20px;
 }
-#uploadbutton {
-    height : 70px;
-    width : 220px;
-    margin-top : 45px;
-    margin-left : 300px;
-    font-size: 20px ;
+#file {
+    color: rgb(251, 155, 155);
 }
+
+#buttons-container {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
 .back-link {
     display: block; 
     margin-top: 10px; 
@@ -179,19 +204,9 @@ h1{
 
 
 #pred-div {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.pred-heading h1 {
-    height : 150px;
-    width: 100vw;
-    background-color:rgb(191, 11, 201);
-    display : flex;
-    justify-content: center;
-    align-items: center;
-}
